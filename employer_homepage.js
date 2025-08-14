@@ -1,6 +1,7 @@
+console.log("HELLO SCRIPTORO");
+
 window.onload = (event) => {
   console.log("page is fully loaded");
-  console.log("HELLO SCRIPTORO");
   console.log(document.getElementsByClassName("inner").item(2));
   document
     .getElementsByClassName("inner")
