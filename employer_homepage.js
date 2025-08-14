@@ -1,4 +1,5 @@
 !function(){
+  console.log("script is running");
   window.onload = (event) => {
     console.log("page is fully loaded");
     console.log(document.getElementsByClassName("inner").item(2));
