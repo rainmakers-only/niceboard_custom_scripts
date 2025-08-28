@@ -1,165 +1,187 @@
 const STYLES = `
-  .how-it-works {
-    background: #fff;
-    padding-bottom: 50px;
-  }
-  .container {
-    display: block;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 100px;
-    max-width: 1132px;
-    overflow: hidden;
-    padding: 0px 24px;
-    position: relative;
-    width: 100%;
-  }
-  .title {
-    font-size: 28px;
-    font-weight: 700;
-    margin: 64px 0;
-    text-align: center;
-  }
-  .wrapper {
+  ul.rm-ul {
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    flex-flow: column;
+    max-width: 720px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 2rem;
     display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding-bottom: 20px;
-
-    .column {
-      flex: 1;
-      padding-left: 12px;
-      padding-right: 12px;
-    }
   }
 
-  .block {
-    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.15);
+  li.rm-li {
+    padding-left: .5em;
+    display: list-item;
+    text-align: left;
+    box-sizing: border-box;
+  }
 
-    display: flex;
+  p.sales-only-focus {
+    color: #4b5563;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    text-decoration: none;
+  }
+
+  .rm-comm-container {
+    grid-row-gap: 64px;
     flex-direction: column;
-    font-size: 0.9em;
-    gap: 20px;
-    height: 100%;
-    justify-content: space-between;
-    line-height: 2;
-    overflow: hidden;
-    padding: 20px;
-    position: relative;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
+    max-width: 1132px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    position: relative;
+  }
 
-    h4 {
-      font-size: 1.3em;
-      line-height: 1.5;
-      text-align: left;
-    }
+  .rm-h3 {
+    color: #000;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 28px;
+    font-weight: 800;
+  }
 
-    .image-wrapper {
-      align-items: center;
-      background-color: #15dad51a;
+  .rm-card-container {
+    grid-column-gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    .card {
+      grid-column-gap: 2rem;
+      grid-row-gap: 2rem;
       border-radius: 1rem;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      padding: 2rem;
       display: flex;
-      height: 4rem;
-      justify-content: center;
-      padding: 1rem;
-      width: 4rem;
-
-      img {
-        background-color: #15dad51a;
-      }
-    }
-
-    ul {
-      line-height: 2.5;
-      padding-left: 20px;
+      box-shadow: 0 10px 15px #0000001a, 0 4px 6px #0000001a;
     }
   }
 
-  .step-title {
+  .card-content-container {
+    grid-row-gap: 1rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+  }
+
+  .card-title-container {
+    color: #000;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 20px;
-    margin-bottom: 16px;
-    text-align: center;
+    font-weight: 800;
   }
 
-  .request {
+  .icon-container {
+    border: 0 solid #e5e7eb;
+  }
+
+  .icon-wrap {
+    background-color: #15dad51a;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 1rem;
+    display: flex;
+  }
+
+  .rm-button {
     background-color: #15dad5;
-    border-radius: 10px;
-    color: #fff;
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 5px;
-    text-align: center;
-    width: auto;
-    &:hover,
-    &:active {
-      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.15), 0 2px 1px 0 rgba(0, 0, 0, 0.1);
-    }
+    border-radius: .5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    position: relative;
+    box-shadow: 0 4px 6px #0000001a, 0 2px 4px #0000001a;
   }
 `;
 
 const HTML_CONTENT = `
-  <div id="one-community-three-ways" class="how-it-works" style="background: #fff; padding-bottom: 50px;">
-    <div class="container">
-      <h3 class=title>One Community, Three Ways to Hire</h3>
+  <div class="rm-comm-container">
+    <h3 class=rm-h3>One Community, Three Ways to Hire</h3>
 
-      <div class=wrapper>
-        <div class=column>
-          <div class=block>
-            <div>
-              <div class=image-wrapper>
-                <img src="https://d27ykm5ra2p4nd.cloudfront.net/dist/assets/hero-02.2f75af2b.jpg
-" alt="img1" />
-              </div>
-              <h4 class=step-title>Reach our active community of sellers</h4>
-              <ul>
-                <li>Sales-only focus</li>
-                <li>Promoted to our Newsletter and Alerts</li>
-                <li>Free to post</li>
-              </ul>
+    <div class=rm-card-container>
+      <div class=card>
+        <div class=card-content-container>
+          <div class=icon-container>
+            <div class=icon-wrap>
+              <img src=img1 alt="img1" />
             </div>
-
-            <a class=request href="https://jobs.rainmakers.co/">
-              Post a Job
-            </a>
+            <h4 class=card-title-container>Reach our active community of sellers</h4>
+            <ul style=rm-ul>
+              <li style=rm-li><p class=sales-only-focus>Sales-only focus</p></li>
+              <li style=rm-li><p class=sales-only-focus>Promoted to our Newsletter and Alerts</p></li>
+              <li style=rm-li><p class=sales-only-focus>Free to post</p></li>
+            </ul>
           </div>
+
+          <a class=rm-button href="https://jobs.rainmakers.co/">
+            Post a Job
+          </a>
         </div>
-        <div class=column>
-          <div class=block>
-            <div>
-              <div class=image-wrapper>
-                <img src=img2 alt="img2" />
-              </div>
-              <h4 class=step-title>Source Curated Salepeople</h4>
-              <ul>
-                <li>Self-serve access</li>
-                <li>Filter by Experience</li>
-                <li>From $750/Month</li>
-              </ul>
+      </div>
+      <div class=card>
+        <div class=card-content-container>
+          <div class=icon-container>
+            <div class=icon-wrap>
+              <img src=img2 alt="img2" />
             </div>
-            <a class=request href="https://jobs.rainmakers.co/">
-              Join Now
-            </a>
+            <h4 class=card-title-container>Source Curated Salepeople</h4>
+            <ul style=rm-ul>
+              <li style=rm-li><p class=sales-only-focus>Self-serve access</p></li>
+              <li style=rm-li><p class=sales-only-focus>Filter by Experience</p></li>
+              <li style=rm-li><p class=sales-only-focus>From $750/Month</p></li>
+            </ul>
           </div>
+          <a class=rm-button href="https://jobs.rainmakers.co/">
+            Join Now
+          </a>
         </div>
-        <div class=column>
-          <div class=block>
-            <div>
-              <div class=image-wrapper>
-                <img src=img3 alt="img3" />
-              </div>
-              <h4 class=step-title>Let Our Experts Deliver Your Next Sales Hire</h4>
-              <ul>
-                <li>Full-cycle recruiting</li>
-                <li>Done entirely for you</li>
-                <li>Custom search and pricing</li>
-              </ul>
+      </div>
+      <div class=card>
+        <div class=card-content-container>
+          <div class=icon-container>
+            <div class=icon-wrap>
+              <img src=img3 alt="img3" />
             </div>
-
-            <a class=request href="mailto:sales@rainmakers.co">
-              Talk to an Expert
-            </a>
+            <h4 class=card-title-container>Let Our Experts Deliver Your Next Sales Hire</h4>
+            <ul style=rm-ul>
+              <li style=rm-li><p class=sales-only-focus>Full-cycle recruiting</p></li>
+              <li style=rm-li><p class=sales-only-focus>Done entirely for you</p></li>
+              <li style=rm-li><p class=sales-only-focus>Custom search and pricing</p></li>
+            </ul>
           </div>
+
+          <a class=rm-button href="mailto:sales@rainmakers.co">
+            Talk to an Expert
+          </a>
         </div>
       </div>
     </div>
@@ -169,16 +191,16 @@ const HTML_CONTENT = `
 console.log("script is running");
 window.onload = (event) => {
   console.log("page is fully loaded");
-  console.log(document.getElementsByClassName("inner").item(2));
+  console.log(window.location.href);
+  //if (window.location.href.includes("https://spyjobboard.niceboard.co/employer")) {
+    const style = document.createElement("style");
+    style.textContent = STYLES;
+    document.head.appendChild(style);
 
 
-  const style = document.createElement("style");
-  style.textContent = STYLES;
-  document.head.appendChild(style);
-
-  document
-    .getElementsByClassName("inner")
-    .item(2)
-    .innerHTML = HTML_CONTENT;
+    document
+      .getElementsByClassName("inner")
+      .item(2)
+      .innerHTML = HTML_CONTENT;
+  //}
 };
-
