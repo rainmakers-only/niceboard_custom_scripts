@@ -8,13 +8,28 @@ const STYLES = `
     margin-bottom: 1em;
     padding-left: 2rem;
     display: flex;
+
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
   }
 
   li.rm-li {
-    padding-left: .5em;
-    display: list-item;
-    text-align: left;
-    box-sizing: border-box;
+    color: #15dad5;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 1rem;
+
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    flex-flow: column;
+    max-width: 720px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 2rem;
+    display: flex;
   }
 
   p.sales-only-focus {
@@ -41,6 +56,19 @@ const STYLES = `
     padding-bottom: 2rem;
     display: flex;
     position: relative;
+
+    box-sizing: border-box;
+    unicode-bidi: isolate;
+
+    background-color: white;
+    color: #4b5563;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Nunito Sans, sans-serif;
+    font-size: 100%;
+    font-weight: 400;
+    line-height: 1.5;
   }
 
   .rm-h3 {
@@ -50,6 +78,9 @@ const STYLES = `
     margin-bottom: 0;
     font-size: 28px;
     font-weight: 800;
+
+    line-height: 1.5;
+    box-sizing: border-box;
   }
 
   .rm-card-container {
@@ -59,19 +90,19 @@ const STYLES = `
     width: 100%;
     display: flex;
     position: relative;
+  }
 
-    .card {
-      grid-column-gap: 2rem;
-      grid-row-gap: 2rem;
-      border-radius: 1rem;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
-      width: 100%;
-      padding: 2rem;
-      display: flex;
-      box-shadow: 0 10px 15px #0000001a, 0 4px 6px #0000001a;
-    }
+  .card {
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    border-radius: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    box-shadow: 0 10px 15px #0000001a, 0 4px 6px #0000001a;
   }
 
   .card-content-container {
@@ -134,13 +165,13 @@ const HTML_CONTENT = `
             <div class=icon-wrap>
               <img src=img1 alt="img1" />
             </div>
-            <h4 class=card-title-container>Reach our active community of sellers</h4>
-            <ul style=rm-ul>
-              <li style=rm-li><p class=sales-only-focus>Sales-only focus</p></li>
-              <li style=rm-li><p class=sales-only-focus>Promoted to our Newsletter and Alerts</p></li>
-              <li style=rm-li><p class=sales-only-focus>Free to post</p></li>
-            </ul>
           </div>
+          <h4 class=card-title-container>Reach our active community of sellers</h4>
+          <ul style=rm-ul>
+            <li style=rm-li><p class=sales-only-focus>Sales-only focus</p></li>
+            <li style=rm-li><p class=sales-only-focus>Promoted to our Newsletter and Alerts</p></li>
+            <li style=rm-li><p class=sales-only-focus>Free to post</p></li>
+          </ul>
 
           <a class=rm-button href="https://jobs.rainmakers.co/">
             Post a Job
@@ -153,13 +184,13 @@ const HTML_CONTENT = `
             <div class=icon-wrap>
               <img src=img2 alt="img2" />
             </div>
-            <h4 class=card-title-container>Source Curated Salepeople</h4>
-            <ul style=rm-ul>
-              <li style=rm-li><p class=sales-only-focus>Self-serve access</p></li>
-              <li style=rm-li><p class=sales-only-focus>Filter by Experience</p></li>
-              <li style=rm-li><p class=sales-only-focus>From $750/Month</p></li>
-            </ul>
           </div>
+          <h4 class=card-title-container>Source Curated Salepeople</h4>
+          <ul style=rm-ul>
+            <li style=rm-li><p class=sales-only-focus>Self-serve access</p></li>
+            <li style=rm-li><p class=sales-only-focus>Filter by Experience</p></li>
+            <li style=rm-li><p class=sales-only-focus>From $750/Month</p></li>
+          </ul>
           <a class=rm-button href="https://jobs.rainmakers.co/">
             Join Now
           </a>
@@ -171,13 +202,13 @@ const HTML_CONTENT = `
             <div class=icon-wrap>
               <img src=img3 alt="img3" />
             </div>
-            <h4 class=card-title-container>Let Our Experts Deliver Your Next Sales Hire</h4>
-            <ul style=rm-ul>
-              <li style=rm-li><p class=sales-only-focus>Full-cycle recruiting</p></li>
-              <li style=rm-li><p class=sales-only-focus>Done entirely for you</p></li>
-              <li style=rm-li><p class=sales-only-focus>Custom search and pricing</p></li>
-            </ul>
           </div>
+          <h4 class=card-title-container>Let Our Experts Deliver Your Next Sales Hire</h4>
+          <ul style=rm-ul>
+            <li style=rm-li><p class=sales-only-focus>Full-cycle recruiting</p></li>
+            <li style=rm-li><p class=sales-only-focus>Done entirely for you</p></li>
+            <li style=rm-li><p class=sales-only-focus>Custom search and pricing</p></li>
+          </ul>
 
           <a class=rm-button href="mailto:sales@rainmakers.co">
             Talk to an Expert
@@ -192,7 +223,7 @@ console.log("script is running");
 window.onload = (event) => {
   console.log("page is fully loaded");
   console.log(window.location.href);
-  //if (window.location.href.includes("https://spyjobboard.niceboard.co/employer")) {
+  if (window.location.href.includes("https://spyjobboard.niceboard.co/employer")) {
     const style = document.createElement("style");
     style.textContent = STYLES;
     document.head.appendChild(style);
@@ -202,5 +233,5 @@ window.onload = (event) => {
       .getElementsByClassName("inner")
       .item(2)
       .innerHTML = HTML_CONTENT;
-  //}
+  }
 };
