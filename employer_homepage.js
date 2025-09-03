@@ -47,7 +47,7 @@ const STYLES = `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0;
     background-color: white;
@@ -85,6 +85,7 @@ const STYLES = `
     font-family: Inter, sans-serif;
     margin: 0;
     text-align: left;
+    min-height: 60px;
   }
 
   .card {
