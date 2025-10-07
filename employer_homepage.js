@@ -226,7 +226,7 @@ const HTML_CONTENT = `
             <li class="rm-li"><p class="sales-only-focus">Low monthly fee, no placement costs</p></li>
             <li class="rm-li"><p class="sales-only-focus">Faster, more targeted connections to proven sales pros</p></li>
           </ul>
-          <a class="rm-button" href="https://www.rainmakers.co/employer-signup/">
+          <a class="rm-button" href="https://www.rainmakers.co/employer-signup?page=platform&utm_source=job_board_platform">
             Request Access
           </a>
         </div>
@@ -246,7 +246,7 @@ const HTML_CONTENT = `
             <li class="rm-li"><p class="sales-only-focus">Best results, percentage-based placement fee</p></li>
           </ul>
 
-          <a class="rm-button" href="mailto:sales@rainmakers.co">
+          <a class="rm-button" href="https://www.rainmakers.co/employer-signup?page=expert&utm_source=job_board_expert">
             Talk to an Expert
           </a>
         </div>
@@ -279,5 +279,21 @@ window.onload = (event) => {
       .getElementsByClassName("inner")
       .item(2)
       .innerHTML = HTML_CONTENT;
+  }
+
+  if (window.location.href.includes('https://jobs.rainmakers.co/post')) {
+    base_checkbox = document.getElementById('custom-this-role-offers-a-base-salary');
+
+    document.getElementById('salary-min').addEventListener('input', function (event) {
+      const value = document.getElementById('salary-min').value;
+
+      console.log(event);
+
+      if (parseFloat(value) > 0) {
+        base_checkbox.checked = true;
+      } else {
+        base_checkbox.checked = false;
+      }
+    });
   }
 };
